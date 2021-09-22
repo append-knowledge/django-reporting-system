@@ -87,3 +87,6 @@ class Batch(models.Model):
 
     def __str__(self):
         self.batch_name
+
+
+#https://github.com/append-knowledge/django-reporting-system.git
