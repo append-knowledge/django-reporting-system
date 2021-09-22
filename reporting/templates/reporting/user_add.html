@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+<body>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-5">
+            <h1>user names</h1>
+            <table class="table border ">
+                <tr>
+                    <td>sl.no</td>
+                    <td>users</td>
+                    <td>role</td>
+                    <td>action</td>
+                </tr>
+                {%for use in users%}
+                <tr>
+                    <td>{{use.id}}</td>
+                    <td>{{use.email}}</td>
+                    <td>{{use.roll}}</td>
+                    <td>
+                        <a href="{%url 'userupdate' use.id %}" class="btn btn-success">edit</a>
+                    </td>
+                </tr>
+                {%endfor%}
+            </table>
+        </div>
+        <div class="col-2"></div>
+        <div class="col-5">
+            <h1>add a new user</h1>
+            <form action="" method="post">
+                {%csrf_token%}
+                {{form.as_p}}
+                <button type="submit" class="btn btn-success form-control">ADD USER</button>
+            </form>
+
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+               <h1>ADMIN HOME</h1>
+        </div>
+        <div class="col-4"></div>
+    </div>
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-7">
+
+            <a href="{%url 'adduser' %}" class="btn btn-primary">user management</a>
+            <a href="{%url 'addcourse' %}" class="btn btn-primary">course management</a>
+            <a href="{%url 'addbatch' %}" class="btn btn-primary">batch management</a>
+        </div>
+        <div class="col-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+<!--            <a href="{%url 'userlist'%}">LIST USER</a>-->
+<!--            <a href="{%url 'listcourse'%}">LIST COURSE</a>-->
+<!--            <a href="{%url 'listbatch'%}">LIST BATCH</a>-->
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+</body>
+</html>
