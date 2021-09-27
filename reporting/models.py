@@ -86,7 +86,14 @@ class Batch(models.Model):
     is_active=models.BooleanField(default=True)
 
     def __str__(self):
-        self.batch_name
+       return self.batch_name
 
 
-#https://github.com/append-knowledge/django-reporting-system.git
+class TimeSheet(models.Model):
+    user=models.CharField(max_length=50)
+    batch=models.ForeignKey(Batch,on_delete=models.CASCADE)
+    topic=models.CharField(max_length=120)
+    date=models.DateField(auto_now_add=True)
+    verified=models.BooleanField(default=False)
+    options=(('inprogress','inprogress'),('completed','completed'))
+    topic_status=models.CharField(max_length=50,choices=options,default='inprogress')

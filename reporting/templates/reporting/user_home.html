@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{%extends 'reporting/index.html'%}
+
+{%block body_block%}
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <h1>USER HOME</h1>
+    </div>
+    <div class="col-4"></div>
+</div>
+<div class="row">
+
+    <div class="col-lg-4 mt-4 mt-lg-0"  data-aos-delay="150">
+        <div class="box">
+            <span>01</span>
+            <h4><a href="{%url 'addtimesheet'%}" style="color:blue;">Timesheet management</a></h4>
+        </div>
+    </div>
+
+    <div class="col-lg-4 mt-4 mt-lg-0"  data-aos-delay="150">
+        <div class="box">
+            <span>02</span>
+            <h4><a href="{%url 'listtimesheets'%}" style="color:blue;">view Timesheet</a></h4>
+        </div>
+    </div>
+
+  </div>
+    {%endblock%}
+    </html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{%extends 'reporting/index.html'%}
+{%block body_block%}
+<div class="row mt-2">
+    <div class="col-1"></div>
+    <div class="col-10">
+        <form action="" method="get" class="d-flex">
+            {{filter.form}}
+            <button type="submit" class="btn btn-success">search </button>
+        </form>
+
+    </div>
+    <div class="col-1"></div>
+</div>
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <table class="table">
+            <tr>
+                <td>BATCH NAME</td>
+                <td>TOPIC</td>
+                <td>USER</td>
+                <td>TOPIC STATUS</td>
+                <td>VERIFIED STATUS</td>
+                <td>DATE</td>
+                <td>ACTION</td>
+
+            </tr>
+            {%for time in timesheets%}
+            <tr>
+                <td>{{time.batch}}</td>
+                <td>{{time.topic}}</td>
+                <td>{{time.user}}</td>
+                <td>{{time.topic_status}}</td>
+                <td>{{time.verified}}</td>
+                <td>{{time.date}}</td>
+                {%if request.user.is_admin%}
+                <td>
+                    {%if not time.verified%}
+                    <a href="{%url 'verifytime' time.id %}" class="btn btn-warning">verify</a>
+                    {%endif%}
+
+                </td>
+                {%else%}
+                <td>
+                    <a href="{% url 'usertimesheetupdate' time.id %}" class="btn btn-warning">edit</a>
+                </td>
+                {%endif%}
+
+            </tr>
+            {%endfor%}
+        </table>
+    </div>
+    <div class="col-2"></div>
+</div>
+
+
+{%endblock%}
